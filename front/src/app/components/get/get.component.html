@@ -1,0 +1,55 @@
+<table mat-table [dataSource]="getList" class="mat-elevation-z8">
+    <ng-container matColumnDef="Titulo">
+        <th mat-header-cell *matHeaderCellDef> Titulo </th>
+        <td mat-cell *matCellDef="let getList"> {{getList.Titulo}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Descripcion">
+        <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+        <td mat-cell *matCellDef="let getList"> {{getList.Descripcion}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Referencias">
+        <th mat-header-cell *matHeaderCellDef> Referencias </th>
+        <td mat-cell *matCellDef="let getList"> {{getList.Referencias}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Conclusiones">
+        <th mat-header-cell *matHeaderCellDef> Conclusiones </th>
+        <td mat-cell *matCellDef="let getList"> {{getList.Conclusiones}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Modificar">
+        <th mat-header-cell *matHeaderCellDef> Modificar</th>
+        <td mat-cell *matCellDef="let getList">
+            <div class="example-button-container">
+                <a href="http://localhost:4200/edit"><button mat-icon-button color="accent" aria-label="Actualizar evento"
+                    (click)="toggleEditEvento(getList._id)">
+                    <mat-icon>edit</mat-icon>
+                </button></a>
+                
+            </div>
+        </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<div *ngIf="editableEvento">
+    <br><br>
+    <h2>Editar evento</h2>
+    <form (ngSubmit)="updateEventoEntry()" [formGroup]="eventoForm">
+        <mat-form-field appearance="fill">
+            <mat-label>Titulo</mat-label>
+            <input matInput formControlName="Titulo" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Descripcion</mat-label>
+            <input matInput formControlName="Descripcion" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Referencias</mat-label>
+            <input matInput formControlName="Referencias" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Conclusiones</mat-label>
+            <input matInput formControlName="Conclusiones" required>
+        </mat-form-field>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+    </form>
+</div>

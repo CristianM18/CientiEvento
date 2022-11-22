@@ -1,0 +1,29 @@
+<table mat-table [dataSource]="getList" class="mat-elevation-z8">
+    
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<div *ngIf="editableEvento">
+    <br><br>
+    <h2>Editar evento</h2>
+    <form (ngSubmit)="updateEventoEntry()" [formGroup]="eventoForm">
+        <mat-form-field appearance="fill">
+            <mat-label>Titulo</mat-label>
+            <input matInput formControlName="Titulo" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Descripcion</mat-label>
+            <input matInput formControlName="Descripcion" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Referencias</mat-label>
+            <input matInput formControlName="Referencias" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Conclusiones</mat-label>
+            <input matInput formControlName="Conclusiones" required>
+        </mat-form-field>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+    </form>
+</div>
