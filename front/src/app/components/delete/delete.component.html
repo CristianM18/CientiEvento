@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Tables - SB Admin</title>
+
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="index.html">CientiEventos</a>
+        <!-- Sidebar Toggle-->
+        <!-- Navbar Search-->
+
+        <!-- Navbar-->
+
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Core</div>
+                        <a class="nav-link" href="http://localhost:4200/index">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Pagina de Inicio
+                        </a>
+                        <div class="sb-sidenav-menu-heading">Eventos</div>
+                        <a class="nav-link collapsed" href="http://localhost:4200/get" data-bs-toggle="collapse"
+                            data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Ver Eventos Creados
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <a class="nav-link collapsed" href="http://localhost:4200/crear" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Crear Evento
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <a class="nav-link collapsed" href="http://localhost:4200/edit" data-bs-toggle="collapse"
+                            data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Actualizar Informacion Evento
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <a class="nav-link collapsed" href="http://localhost:4200/delete" data-bs-toggle="collapse"
+                            data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Eliminar Evento
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <img src="https://i.pinimg.com/originals/e9/6c/0b/e96c0b66be57cf8147fe754845f8c4d9.gif">
+                       
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Eliminar un Evento</h1>
+                    <br>
+
+                    <div align="center">
+
+                    </div>
+                    <br>
+                    <br>
+                    <div class="card mb-4" style="background-color: #ffffff;">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            Para eliminar un evento presiona el icono sobre el evento que quieres eliminar.
+
+                        </div>
+                        <div align="center">
+                            <img width="25%" src="https://maisengenharia.altoqi.com.br/wp-content/uploads/2020/09/ilustracao_02_eliminar_arquivos-1-1024x576.png">
+                            <img width="29%" src="data:image/jpeg;base64,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">
+                            <img width="29%" src="http://escueladeexperiencias.com/wp-content/uploads/2017/12/la-palabra-a-eliminar-en-la-educacio%CC%81n.jpg">
+                        </div>
+                        
+                        
+                        <div class="card-body">
+                            <table mat-table [dataSource]="deleteList" class="mat-elevation-z8">
+                                <ng-container matColumnDef="Titulo">
+                                    <th mat-header-cell *matHeaderCellDef> Titulo </th>
+                                    <td mat-cell *matCellDef="let eventoList"> {{eventoList.Titulo}} </td>
+                                </ng-container>
+                                <ng-container matColumnDef="Descripcion">
+                                    <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+                                    <td mat-cell *matCellDef="let eventoList"> {{eventoList.Descripcion}} </td>
+                                </ng-container>
+                                <ng-container matColumnDef="Referencias">
+                                    <th mat-header-cell *matHeaderCellDef> Referencias </th>
+                                    <td mat-cell *matCellDef="let eventoList"> {{eventoList.Referencias}} </td>
+                                </ng-container>
+                                <ng-container matColumnDef="Conclusiones">
+                                    <th mat-header-cell *matHeaderCellDef> Conclusiones </th>
+                                    <td mat-cell *matCellDef="let eventoList"> {{eventoList.Conclusiones}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="Eliminar">
+                                    <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+                                    <td mat-cell *matCellDef="let eventoList">
+                                        <div class="example-button-container">
+                                            <button mat-icon-button color="accent" aria-label="Eliminar evento"
+                                                (click)="deleteEventoEntry(eventoList._id)">
+                                                <mat-icon>delete</mat-icon>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </ng-container>
+
+
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                            </table>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Your Website 2022</div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>
+</body>
+
+</html>

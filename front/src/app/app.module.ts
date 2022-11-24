@@ -11,13 +11,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { GetComponent } from './components/get/get.component';
 import { EditComponent } from './components/edit/edit.component';
+import { CrearComponent } from './components/crear/crear.component';
+import { DeleteComponent } from './components/delete/delete.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     EventoComponent,
     GetComponent,
-    EditComponent
+    EditComponent,
+    CrearComponent,
+    DeleteComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

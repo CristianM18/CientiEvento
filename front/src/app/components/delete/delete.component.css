@@ -1,20 +1,17 @@
-
-
 @charset "UTF-8";
 
 table {
-    width:  100%;
+    width: 100%;
 }
 
 
-.mt-4{
+.mt-4 {
     color: #ffffff;
     font-family: Cheddar gothic;
     font-weight: bolder;
-  }
+}
 
-
-.mat-elevation-z8{
+.mat-elevation-z8 {
     background-color: #ffffff;
 }
 
@@ -38,12 +35,12 @@ table {
     background-size: cover;
   }
 
-  th,
-  td {
-      border: 20px solid rgb(0, 0, 0);
-      width: 900px;
-      word-wrap: break-word;
-  }
+th,
+td {
+    border: 20px solid rgb(0, 0, 0);
+    width: 900px;
+    word-wrap: break-word;
+}
 
 :host {
     display: flex;

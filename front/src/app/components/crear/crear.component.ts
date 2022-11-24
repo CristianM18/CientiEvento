@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { CrearService } from 'src/app/services/crear.service';
 import { FormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { EditService } from 'src/app/services/edit.service';
-import { GetService } from 'src/app/services/get.service';
+
 
 @Component({
-  selector: 'app-edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.css']
+  selector: 'app-crear',
+  templateUrl: './crear.component.html',
+  styleUrls: ['./crear.component.css']
 })
-export class EditComponent implements OnInit {
+export class CrearComponent implements OnInit {
 
   constructor(
-    private editService: EditService,
-    private getService: GetService,
+    private crearService: CrearService,
     private formBuilder: FormBuilder,
     private _snackBar: MatSnackBar
   ) { }
@@ -22,33 +21,27 @@ export class EditComponent implements OnInit {
     this.obtenerEventos();
   }
 
+  displayedColumns: string[] = ['Titulo', 'Descripcion', 'Referencias', 'Conclusiones'];
+ 
+
+  crearList: any = [];
+
   obtenerEventos() {
-    this.getService.getAllEventosData().subscribe((data: {}) => {
-      this.getList = data;
+    this.crearService.getAllEventosData().subscribe((data: {}) => {
+      this.crearList = data;
     })
   }
 
-  idEvento: any;
-  editableEvento: boolean = false;
-  displayedColumns: string[] = ['Titulo', 'Descripcion', 'Referencias', 'Conclusiones', 'Modificar'];
-
-  getList: any = [];
-
-  updateEventoEntry() {
+  newEventoEntry() {
     if (this.eventoForm.value['Titulo'] === '' || this.eventoForm.value['Descripcion'] === '' || this.eventoForm.value['Referencias'] === '' || this.eventoForm.value['Conclusiones'] === '') {
       this.openMessage("Falta información", "Cerrar");
     } else {
-      this.editService.updateEvento(this.idEvento, this.eventoForm.value).subscribe(
+      this.crearService.newEvento(this.eventoForm.value).subscribe(
         () => {
-          this.openMessage("Evento editado", "Actualizar lista");
-        })
+          this.openMessage("Evento agregado", "Actualizar lista");
+        }
+      );
     }
-  }
-
-  toggleEditEvento(id: any) {
-    this.idEvento = id;
-    console.log(this.idEvento)
-    this.editableEvento = !this.editableEvento;
   }
 
   eventoForm = this.formBuilder.group({
@@ -58,17 +51,15 @@ export class EditComponent implements OnInit {
     Conclusiones: ''
   })
 
-  message(message: string) {
-    let snackBarRef = this._snackBar.open(message);
-  }
-
   openMessage(message: string, action: string) {
     let snackBarRef = this._snackBar.open(message, action);
     if (message !== 'Falta información') {
       snackBarRef.afterDismissed().subscribe(() => {
+        //Redirigiendo a la ruta actual /animal y recargando la ventana
         window.location.href = "http://localhost:4200/get"
       });
     }
   }
+
 
 }

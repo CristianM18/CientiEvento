@@ -1,8 +1,26 @@
 @charset "UTF-8";
 
 
-.tablita .mat-elevation-z8 {
-  background-color: #ffffff;
+th,
+td {
+  border: 20px solid rgb(0, 0, 0);
+  width: 700px;
+  word-wrap: break-word;
+
+}
+
+
+.mt-4{
+  color: #ffffff;
+  font-family: Cheddar gothic;
+  font-weight: bolder;
+}
+
+.py-4   {
+  background-image: url(https://www.dhluxuriousacabados.com/wp-content/uploads/2020/10/Marmol-Negro-Marquina-Espanol.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .container-fluid {
@@ -12,10 +30,9 @@
   background-size: cover;
 }
 
-.card-footer {
-  font-size: large;
+.mat-elevation-z8 {
+  background-color: #ffffff;
 }
-
 
 .sb-nav-fixed {
   background-image: url(https://www.dhluxuriousacabados.com/wp-content/uploads/2020/10/Marmol-Negro-Marquina-Espanol.jpg);
@@ -24,16 +41,10 @@
   background-size: cover;
 }
 
-.mt-4{
-  color: #ffffff;
-  font-family: Cheddar gothic;
-  font-weight: bolder;
-}
-
-
 .fas fa-table me-1 {
-  background-color: #331616;
+  background-color: #c7c6c6;
 }
+
 
 :root {
   --bs-blue: #0d6efd;

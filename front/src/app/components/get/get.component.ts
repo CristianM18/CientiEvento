@@ -3,7 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { GetService } from 'src/app/services/get.service';
-import { EditService } from 'src/app/services/edit.service';
+
 
 @Component({
   selector: 'app-get',
@@ -14,7 +14,6 @@ export class GetComponent implements OnInit {
 
   constructor(
     private getService: GetService,
-    private EditService: EditService,
     private formBuilder: FormBuilder,
     private router: Router,
     private _snackBar: MatSnackBar
@@ -24,9 +23,7 @@ export class GetComponent implements OnInit {
     this.obtenerEventos();
   }
 
-  displayedColumns: string[] = ['Titulo', 'Descripcion', 'Referencias', 'Conclusiones', 'Modificar'];
-  idEvento: any;
-  editableEvento: boolean = false;
+  displayedColumns: string[] = ['Titulo', 'Descripcion', 'Referencias', 'Conclusiones'];
   getList: any = [];
 
   obtenerEventos() {
@@ -47,25 +44,6 @@ export class GetComponent implements OnInit {
     }
   }
 
-
-
-  updateEventoEntry() {
-    //Removiendo valores vacios del formulario de actualización
-    for (let key in this.eventoForm.value) {
-    }
-    this.EditService.updateEvento(this.idEvento, this.eventoForm.value).subscribe(
-      () => {
-        //Enviando mensaje de confirmación
-        this.openMessage("Evento editado", "Actualizar lista");
-      }
-    );
-  }
-
-  toggleEditEvento(id: any) {
-    this.idEvento = id;
-    console.log(this.idEvento)
-    this.editableEvento = !this.editableEvento;
-  }
 
   eventoForm = this.formBuilder.group({
     Titulo: '',
